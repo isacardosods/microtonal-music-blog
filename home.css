@@ -23,7 +23,7 @@ main {
     text-align: center;
     color: #FFD700;
     font-weight: 500;
-    font-size: 1em;
+    font-size: 1.1em;
     margin-top: 12vh;
 }
 
@@ -60,17 +60,6 @@ main {
     gap: 15px;
 }
 
-.banda {
-    background-color: #FFD700;
-    border: none;
-}
-
-.comunidade {
-    border: 1px solid gray;
-    background-color: transparent;
-    color: white;
-}
-
 .btn {
     display: flex;
     justify-content: center;
@@ -81,4 +70,23 @@ main {
     border-radius: 5px;
     font-weight: 500;
     cursor: pointer;
+}
+
+.artistas {
+    background-color: #FFD700;
+    border: none;
+}
+
+.artistas:hover{
+    background-color: #a28d18;
+}
+
+.cadastro {
+    border: 1px solid gray;
+    background-color: transparent;
+    color: white;
+}
+
+.cadastro:hover{
+    background-color: hsla(0, 0%, 100%, 0.181);
 }

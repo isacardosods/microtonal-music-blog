@@ -32,7 +32,7 @@ nav .logo span {
 
 nav ul {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     margin-right: 5vw;
     gap: 50px;
 }
@@ -40,6 +40,10 @@ nav ul {
 nav ul li {
     list-style: none;
     cursor: pointer;
+}
+
+nav ul li:hover{
+    color: #a28d18;
 }
 
 nav ul button {
@@ -52,6 +56,10 @@ nav ul button {
     text-decoration: none;
     color: #000000;
     font-weight: 700;
+}
+
+nav ul button:hover{
+    background-color: #ffd900cc;
 }
 
 footer{
