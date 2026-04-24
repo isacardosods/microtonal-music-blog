@@ -1,0 +1,107 @@
+main {
+    display: flex;
+    width: 100%;
+    height: 110vh;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/img/king-show.webp');
+    background-size: cover;
+}
+
+
+.text-container {
+    margin-top: 10vh;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
+}
+
+
+
+.text-container span {
+    font-weight: 700;
+    font-size: 2.5em;
+}
+
+.text-container p {
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.form-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 50px;
+  
+}
+
+.form-container form {
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(255, 255, 255);
+    padding: 50px;
+    border: 2px solid #FFD700;
+    border-radius: 5px;
+    height: 70vh;
+
+}
+
+form input {
+    width: 25vw;
+    height: 5vh;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(241, 241, 241);
+    margin-bottom: 2vh;
+    margin-top: 1vh;
+    padding-left: 10px;
+    font-size: 1em;
+}
+
+.btn {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 3vh;
+}
+
+form .btn button {
+    width: 10vw;
+    height: 4vh;
+    border-radius: 5px;
+    border: none;
+    background-color: #FFD700;
+    cursor: pointer;
+}
+
+form span {
+    font-weight: 500;
+    font-size: 1.3em;
+}
+
+.btn button:hover {
+    background-color: #f2d841;
+}
+
+.direcionamento-login {
+    margin-top: 3vh;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.direcionamento-login span{
+    font-weight: 1.3em;
+}
+
+.link-login a{
+    text-decoration: none;
+    color: #eacf34;
+}
+
+.span-login{
+    font-size: 1.2em;
+}
