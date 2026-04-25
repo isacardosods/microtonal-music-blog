@@ -14,10 +14,17 @@ function autenticar(req, res) {
             .then(
                 function (resultadoAutenticar) {
                     console.log(`\nResultados encontrados: ${resultadoAutenticar.length}`);
-                    console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`); // transforma JSON em String
+                    console.log(`Resultados: ${JSON.stringify(resultadoAutenticar)}`);
 
                     if (resultadoAutenticar.length == 1) {
                         console.log(resultadoAutenticar);
+
+                        res.json({
+                            id_usuario: resultadoAutenticar[0].id_usuario,
+                            nome: resultadoAutenticar[0].nome,
+                            email: resultadoAutenticar[0].email
+                        });
+
                     } else if (resultadoAutenticar.length == 0) {
                         res.status(403).send("Email e/ou senha inválido(s)");
                     } else {

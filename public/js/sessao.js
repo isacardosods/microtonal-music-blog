@@ -1,4 +1,3 @@
-// sessão
 function validarSessao() {
     var email = sessionStorage.EMAIL_USUARIO;
     var nome = sessionStorage.NOME_USUARIO;
@@ -17,7 +16,6 @@ function limparSessao() {
     window.location = "../login.html";
 }
 
-// carregamento (loading)
 function aguardar() {
     var divAguardar = document.getElementById("div_aguardar");
     divAguardar.style.display = "flex";
@@ -31,6 +29,9 @@ function finalizarAguardar(texto) {
     if (texto) {
         divErrosLogin.style.display = "flex";
         divErrosLogin.innerHTML = texto;
+    } else {
+        divErrosLogin.style.display = "none";
+        divErrosLogin.innerHTML = "";
     }
 }
 
