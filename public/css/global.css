@@ -98,16 +98,12 @@ main {
 
 #div_erros_login {
     display: none;
-    justify-content: center;
-    align-items: center;
     font-size: 1.3em;
     margin-top: 1vh;
 }
 
 .alerta_erro {
     display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 .card_erro {
@@ -115,7 +111,6 @@ main {
     background-color: #fff;
     color: black;
     width: 230px;
-    margin-top: 20%;
     margin-left: 40%;
     position: fixed;
     border-radius: 4px;
