@@ -38,7 +38,7 @@ main {
     margin-top: 5vh;
 }
 
-.form-container form {
+.form-container .form {
     display: flex;
     flex-direction: column;
     background-color: rgb(255, 255, 255);
@@ -49,7 +49,7 @@ main {
 
 }
 
-form input {
+.form input {
     width: 25vw;
     height: 5vh;
     border-radius: 5px;
@@ -68,7 +68,7 @@ form input {
     margin-top: 3vh;
 }
 
-form .btn button {
+.form .btn button {
     width: 10vw;
     height: 4vh;
     border-radius: 5px;
@@ -77,7 +77,7 @@ form .btn button {
     cursor: pointer;
 }
 
-form span {
+.form span {
     font-weight: 500;
     font-size: 1.3em;
 }

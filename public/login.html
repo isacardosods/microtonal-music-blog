@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/login.css">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/login.css">
     <title>Entretons | Login</title>
 </head>
 <body>
@@ -14,10 +14,10 @@
                 <span>Entretons</span>
             </div>
             <ul>
-                <li><a href="./index.html">Home</a></li>
-                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
                 <li><a href="#">Artistas</a></li>
-                <button onclick="janelaLogin()" id="btn-login">Login</button>
+                <button onclick="mudarJanela('./login.html')">Login</button>
             </ul>
         </nav>
     </header>
@@ -28,7 +28,7 @@
             <p>Preencha as informações abaixo para prosseguir com seu login</p>
         </div>
         <div class="form-container">
-            <form action="">
+            <div class="form">
                 <span>Email:</span>
                 <input type="text" placeholder="Digite seu email...">
 
@@ -42,7 +42,7 @@
                 <div class="direcionamento-cadastro">
                     <span class="span-cadastro">Não tem uma conta?</span><span class="link-cadastro span-cadastro"><a href="./cadastro.html">Cadastre-se</a></span>
                 </div>
-            </form>
+            </div>
         </div>
     </main>
 
