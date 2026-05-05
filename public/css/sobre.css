@@ -45,14 +45,32 @@ main {
     margin-top: 5vh;
 }
 
-.origem{
+.origem {
     width: 100%;
     height: 60vh;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.linha-do-tempo{
+.origem .text-box {
+    margin-top: 5vh;
+    width: 50%;
+}
+
+.origem .text-box span {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.origem .text-box p {
+    font-size: 1.3em;
+    font-weight: 500;
+    margin-top: 2vh;
+    text-align: justify;
+}
+
+.linha-do-tempo {
     width: 100%;
     height: 90vh;
     display: flex;
@@ -61,7 +79,7 @@ main {
     background-color: rgb(244, 244, 244);
 }
 
-.item-linha{
+.item-linha {
     display: flex;
     flex-direction: column;
 }

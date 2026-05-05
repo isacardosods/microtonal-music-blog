@@ -41,7 +41,7 @@ function entrar() {
                     sessionStorage.ID_USUARIO = json.id_usuario;
 
                     setTimeout(function () {
-                        window.location = "/index.html";
+                        window.location = "/dashboard.html";
                     }, 1000); 
 
                 });
