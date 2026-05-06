@@ -70,16 +70,87 @@ main {
     text-align: justify;
 }
 
-.linha-do-tempo {
+.container-linha {
     width: 100%;
-    height: 90vh;
     display: flex;
     flex-direction: column;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background-color: rgb(244, 244, 244);
 }
 
-.item-linha {
+.container-linha h1 {
+    font-size: 2em;
+    margin-top: 5vh;
+}
+
+.linha-tempo {
+    display: inline-block;
+    position: relative;
+    list-style: none;
+    margin: 5%;
+    width: 35%;
+}
+
+.linha-tempo li {
+    padding: 20px;
+    background-color: white;
+    margin-bottom: 1vh;
+}
+
+.conteudo {
     display: flex;
     flex-direction: column;
+}
+
+.linha-tempo .conteudo span:nth-of-type(2) {
+    font-weight: 700;
+    font-size: 1.3em;
+    margin-bottom: 1vh;
+    color: #FFD700;
+}
+
+.linha-tempo .conteudo p {
+    font-size: 1.1em;
+    font-weight: 500;
+    margin-bottom: 1vh;
+}
+
+.data {
+    font-size: 0.8em;
+    font-weight: 600;
+    margin-bottom: 1vh;
+    letter-spacing: 2px;
+}
+
+/*odd é usado para selecionar os elementos ímpares enquanto o even é para os pares!!! o transform desloca as caixas*/
+.linha-tempo li:nth-child(odd) {
+    border-radius: 5px 0px 5px 5px;
+    float: left;
+    transform: translateX(-22vw);
+    border: 2px solid gray;
+    border-bottom: 5px solid #FFD700;
+}
+
+.linha-tempo li:nth-child(even) {
+    border-radius: 0px 5px 5px 5px;
+    float: right;
+    transform: translateX(22vw);
+    border: 2px solid gray;
+    border-bottom: 5px solid #FFD700;
+}
+
+/* o before/after cria um elemento 'falso' através do css, nesse caso é utilizado para criar a linha, sem necessariamente ter escrito ela no html */
+
+.linha-tempo::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+    border-style: dashed;
+    border-radius: 5px;
+    color: #FFD700;
+
 }
