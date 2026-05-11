@@ -1,5 +1,12 @@
+        main{
+            height: 80vh;
+            display: flex;           
+            align-items: center;
+        }
+        
         .quiz-container {
             width: 70%;
+            height: max-content;
             margin: 5vh auto;
             background-color: #111;
             padding: 40px;
@@ -63,4 +70,16 @@
 
         button:hover {
             background-color: #e6c200;
+        }
+
+        .pergunta {
+            display: none;
+        }
+
+        .pergunta.ativa {
+            display: block;
+        }
+
+        #btn_enviar {
+            display: none;
         }
