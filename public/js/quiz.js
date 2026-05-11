@@ -26,17 +26,7 @@ function avancar() {
 
     pergunta_atual++;
 
-    // if (pergunta_atual < perguntas.length) {
-
-    //     perguntas[pergunta_atual].classList.add('ativa');
-
-    // } else {
-
-    //     btn_proximo.style.display = 'none';
-    //     btn_enviar.style.display = 'block';
-    // }
     verificar();
-    console.log(pergunta_atual)
 }
 
 function recuar() {
@@ -45,15 +35,5 @@ function recuar() {
 
     pergunta_atual--;
 
-    // if (pergunta_atual < perguntas.length) {
-
-    //     perguntas[pergunta_atual].classList.add('ativa');
-
-    // } else {
-
-    //     btn_proximo.style.display = 'none';
-    //     btn_enviar.style.display = 'block';
-
-    // }
     verificar();
 }
