@@ -41,8 +41,9 @@ function recuar() {
     verificar();
 }
 
-function capturarRespostas() {
-    let questoes = [];
+function cadastrarRespostas() {
+    let usuario_respostas = [];
+    let respostas = [];
 
     for (let i = 1; i <= 10; i++) {
         const resposta = document.querySelector(`input[name="q${i}"]:checked`);
@@ -53,10 +54,19 @@ function capturarRespostas() {
             return;
         }
 
-        questoes.push({ id: `q${i}`, resposta: resposta.id, tipo: resposta.value });
+        //capturar através de um select ?
+        usuario_respostas.push({
+            id_usuario: `${sessionStorage.getItem('ID_USUARIO')}`,
+            id_resposta: `q${i}`
+        });
+
+        respostas.push({
+            resposta: resposta.id,
+            tipo: resposta.value
+        })
     }
 
-    console.log('cadastro: ', questoes);
+    console.log('cadastro: ', usuario_respostas);
     carregarDiv();
 }
 
