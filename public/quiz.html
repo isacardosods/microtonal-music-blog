@@ -34,6 +34,8 @@
 
     <main>
 
+        <!--o próximo passo será fazer uma função de carregar as informações do quiz dinamicamente atraves das informações do banco, para ser mais fácil, sustentável e escalável de capturar os ids das perguntas e respostas-->
+
         <div class="quiz-container">
 
             <h1>Quiz</h1>
@@ -51,17 +53,17 @@
                 <div class="opcoes">
 
                     <label>
-                        <input type="radio" name="q1" id="q1_a" value="errada">
+                        <input type="radio" name="q1" data-pergunta="" data-id_resposta="">
                         Música feita apenas com instrumentos elétricos
                     </label>
 
                     <label>
-                        <input type="radio" name="q1" id="q1_b" value="correta">
+                        <input type="radio" name="q1" data-pergunta="" data-id_resposta="">
                         Música que utiliza notas entre os semitons tradicionais
                     </label>
 
                     <label>
-                        <input type="radio" name="q1" id="q1_c" value="errada">
+                        <input type="radio" name="q1" data-pergunta="" data-id_resposta="">
                         Música tocada em volume baixo
                     </label>
 
@@ -78,17 +80,17 @@
                 <div class="opcoes">
 
                     <label>
-                        <input type="radio" name="q2" id="q2_a" value="errada">
+                        <input type="radio" name="q2" data-pergunta="" data-id_resposta="">
                         8
                     </label>
 
                     <label>
-                        <input type="radio" name="q2" id="q2_b" value="errada">
+                        <input type="radio" name="q2" data-pergunta="" data-id_resposta="">
                         10
                     </label>
 
                     <label>
-                        <input type="radio" name="q2" id="q2_c" value="correta">
+                        <input type="radio" name="q2" data-pergunta="" data-id_resposta="">
                         12
                     </label>
 
@@ -105,17 +107,17 @@
                 <div class="opcoes">
 
                     <label>
-                        <input type="radio" name="q3" id="q3_a" value="correta">
+                        <input type="radio" name="q3" data-pergunta="" data-id_resposta="">
                         Violão fretless
                     </label>
 
                     <label>
-                        <input type="radio" name="q3" id="q3_b" value="errada">
+                        <input type="radio" name="q3" data-pergunta="" data-id_resposta="">
                         Triângulo
                     </label>
 
                     <label>
-                        <input type="radio" name="q3" id="q3_c" value="errada">
+                        <input type="radio" name="q3" data-pergunta="" data-id_resposta="">
                         Tambor militar
                     </label>
 
@@ -132,17 +134,17 @@
                 <div class="opcoes">
 
                     <label>
-                        <input type="radio" name="q4" id="q4_a" value="correta">
+                        <input type="radio" name="q4" data-pergunta="" data-id_resposta="">
                         Uma nota menor que um semitom
                     </label>
 
                     <label>
-                        <input type="radio" name="q4" id="q4_b" value="errada">
+                        <input type="radio" name="q4" data-pergunta="" data-id_resposta="">
                         Um instrumento pequeno
                     </label>
 
                     <label>
-                        <input type="radio" name="q4" id="q4_c" value="errada">
+                        <input type="radio" name="q4" data-pergunta="" data-id_resposta="">
                         Um tipo de microfone
                     </label>
 
@@ -159,17 +161,17 @@
                 <div class="opcoes">
 
                     <label>
-                        <input type="radio" name="q5" id="q5_a" value="errada">
+                        <input type="radio" name="q5" data-pergunta="" data-id_resposta="">
                         Jacob Collier
                     </label>
 
                     <label>
-                        <input type="radio" name="q5" id="q5_b" value="correta">
+                        <input type="radio" name="q5" data-pergunta="" data-id_resposta="">
                         King Gizzard & the Lizard Wizard
                     </label>
 
                     <label>
-                        <input type="radio" name="q5" id="q5_c" value="errada">
+                        <input type="radio" name="q5" data-pergunta="" data-id_resposta="">
                         AC/DC
                     </label>
 
@@ -186,17 +188,17 @@
                 <div class="opcoes">
 
                     <label>
-                        <input type="radio" name="q6" id="q6_a" value="errada">
+                        <input type="radio" name="q6" data-pergunta="" data-id_resposta="">
                         Sim
                     </label>
 
                     <label>
-                        <input type="radio" name="q6" id="q6_b" value="correta">
+                        <input type="radio" name="q6" data-pergunta="" data-id_resposta="">
                         Não
                     </label>
 
                     <label>
-                        <input type="radio" name="q6" id="q6_c" value="errada">
+                        <input type="radio" name="q6" data-pergunta="" data-id_resposta="">
                         Apenas em músicas clássicas
                     </label>
 
@@ -213,17 +215,17 @@
                 <div class="opcoes">
 
                     <label>
-                        <input type="radio" name="q7" id="q7_a" value="errada">
+                        <input type="radio" name="q7" data-pergunta="" data-id_resposta="">
                         O ritmo
                     </label>
 
                     <label>
-                        <input type="radio" name="q7" id="q7_b" value="errada">
+                        <input type="radio" name="q7" data-pergunta="" data-id_resposta="">
                         O volume
                     </label>
 
                     <label>
-                        <input type="radio" name="q7" id="q7_c" value="correta">
+                        <input type="radio" name="q7" data-pergunta="" data-id_resposta="">
                         A divisão das notas
                     </label>
 
@@ -240,17 +242,17 @@
                 <div class="opcoes">
 
                     <label>
-                        <input type="radio" name="q8" id="q8_a" value="correta">
+                        <input type="radio" name="q8" data-pergunta="" data-id_resposta="">
                         Música árabe
                     </label>
 
                     <label>
-                        <input type="radio" name="q8" id="q8_b" value="errada">
+                        <input type="radio" name="q8" data-pergunta="" data-id_resposta="">
                         Música country
                     </label>
 
                     <label>
-                        <input type="radio" name="q8" id="q8_c" value="errada">
+                        <input type="radio" name="q8" data-pergunta="" data-id_resposta="">
                         Música punk
                     </label>
 
@@ -267,17 +269,17 @@
                 <div class="opcoes">
 
                     <label>
-                        <input type="radio" name="q9" id="q9_a" value="correta">
+                        <input type="radio" name="q9" data-pergunta="" data-id_resposta="">
                         Sons diferentes ou “estranhos”
                     </label>
 
                     <label>
-                        <input type="radio" name="q9" id="q9_b" value="errada">
+                        <input type="radio" name="q9" data-pergunta="" data-id_resposta="">
                         Silêncio absoluto
                     </label>
 
                     <label>
-                        <input type="radio" name="q9" id="q9_c" value="errada">
+                        <input type="radio" name="q9" data-pergunta="" data-id_resposta="">
                         Ecos automáticos
                     </label>
 
@@ -294,17 +296,17 @@
                 <div class="opcoes">
 
                     <label>
-                        <input type="radio" name="q10" id="q10_a" value="errada">
+                        <input type="radio" name="q10" data-pergunta="" data-id_resposta="">
                         Sim
                     </label>
 
                     <label>
-                        <input type="radio" name="q10" id="q10_b" value="correta">
+                        <input type="radio" name="q10" data-pergunta="" data-id_resposta="">
                         Não
                     </label>
 
                     <label>
-                        <input type="radio" name="q10" id="q10_c" value="errada">
+                        <input type="radio" name="q10" data-pergunta="" data-id_resposta="">
                         Apenas sintetizadores antigos
                     </label>
 

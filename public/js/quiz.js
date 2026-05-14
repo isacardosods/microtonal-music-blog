@@ -4,7 +4,7 @@ const btn_anterior = document.getElementById('back_btn');
 const btn_enviar = document.getElementById('btn_enviar');
 const cardErro = document.getElementById('cardErro');
 
-let pergunta_atual = 0;
+let pergunta_atual = 1;
 
 verificar();
 
@@ -42,28 +42,29 @@ function recuar() {
 }
 
 function cadastrarRespostas() {
-    let usuario_respostas = [];
-    let respostas = [];
+    let usuario_respostas = 
+        {
+            "id_usuario": `${sessionStorage.getItem('ID_USUARIO')}`,
+            "respostas": []
+        };
 
     for (let i = 1; i <= 10; i++) {
-        const resposta = document.querySelector(`input[name="q${i}"]:checked`);
+        const questao = document.querySelector(`input[name="q${i}"]:checked`);
 
-        if (!resposta) {
+        if (!questao) {
             cardErro.style.display = "flex";
             mensagem_erro.innerHTML = `É necessário responder todas as questões!`;
             return;
         }
 
-        //capturar através de um select ?
-        usuario_respostas.push({
-            id_usuario: `${sessionStorage.getItem('ID_USUARIO')}`,
-            id_resposta: `q${i}`
+        //muita dificuldade aqui, tirar dúvidas depois
+        //obs: validar se a resposta é certa ou errada no controller
+        //obs2: dataset é como se fosse um objeto que armazena os atributos que vc colocou nele a partir do front
+        usuario_respostas.respostas.push({
+            id_pergunta: questao.dataset.pergunta,
+            id_alternativa: questao.dataset.id_resposta
         });
 
-        respostas.push({
-            resposta: resposta.id,
-            tipo: resposta.value
-        })
     }
 
     console.log('cadastro: ', usuario_respostas);
