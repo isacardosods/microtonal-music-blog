@@ -4,7 +4,7 @@ const btn_anterior = document.getElementById('back_btn');
 const btn_enviar = document.getElementById('btn_enviar');
 const cardErro = document.getElementById('cardErro');
 
-let pergunta_atual = 1;
+let pergunta_atual = 0;
 
 verificar();
 
@@ -42,14 +42,14 @@ function recuar() {
 }
 
 function cadastrarRespostas() {
-    let usuario_respostas = 
-        {
-            "id_usuario": `${sessionStorage.getItem('ID_USUARIO')}`,
-            "respostas": []
-        };
+    let usuario_respostas =
+    {
+        "id_usuario": `${sessionStorage.getItem('ID_USUARIO')}`,
+        "respostas": []
+    };
 
-    for (let i = 1; i <= 10; i++) {
-        const questao = document.querySelector(`input[name="q${i}"]:checked`);
+    for (let i = 0; i < 10; i++) {
+        const questao = document.querySelector(`input[name="q${i + 1}"]:checked`);
 
         if (!questao) {
             cardErro.style.display = "flex";
@@ -69,48 +69,42 @@ function cadastrarRespostas() {
 
     console.log('cadastro: ', usuario_respostas);
 
-            fetch("/quiz/cadastrarRespostas", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify(usuario_respostas)
-        }).then(function (resposta) {
-            console.log("ESTOU NO THEN DO cadastrarRespostas()!")
+    fetch("/quiz/cadastrarRespostas", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(usuario_respostas)
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO cadastrarRespostas()!")
 
-            if (resposta.ok) {
-                console.log(resposta);
-                console.log('Respostas cadastradas com sucesso!')
+        if (resposta.ok) {
+            console.log(resposta);
+            console.log('Respostas cadastradas com sucesso!')
+            carregarDiv();
 
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    // sessionStorage.EMAIL_USUARIO = json.email;
-                    // sessionStorage.NOME_USUARIO = json.nome;
-                    // sessionStorage.ID_USUARIO = json.id_usuario;
+            resposta.json().then(json => {
+                console.log(json);
+                console.log(JSON.stringify(json));
+            });
 
-                    // setTimeout(function () {
-                    //     window.location = "/dashboard.html";
-                    // }, 1000); 
+        } else {
 
-                });
+            console.log("Houve um erro ao tentar cadastrar as respostas!");
 
-            } else {
+            resposta.text().then(texto => {
+                console.error(texto);
 
-                console.log("Houve um erro ao tentar cadastrar as respostas!");
+                cardErro.style.display = "flex";
+                mensagem_erro.innerHTML = `É necessário estar logado para responder!`;
+            });
+        }
 
-                resposta.text().then(texto => {
-                    console.error(texto);
-                    finalizarAguardar(texto);
-                });
-            }
+    }).catch(function (erro) {
+        console.log(erro);
+    })
 
-        }).catch(function (erro) {
-            console.log(erro);
-        })
-
-        return false;
-    carregarDiv();
+    return false;
 }
 
 function carregarDiv() {
