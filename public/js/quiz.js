@@ -68,6 +68,48 @@ function cadastrarRespostas() {
     }
 
     console.log('cadastro: ', usuario_respostas);
+
+            fetch("/quiz/cadastrarRespostas", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify(usuario_respostas)
+        }).then(function (resposta) {
+            console.log("ESTOU NO THEN DO cadastrarRespostas()!")
+
+            if (resposta.ok) {
+                console.log(resposta);
+                console.log('Respostas cadastradas com sucesso!')
+
+                resposta.json().then(json => {
+                    console.log(json);
+                    console.log(JSON.stringify(json));
+                    // sessionStorage.EMAIL_USUARIO = json.email;
+                    // sessionStorage.NOME_USUARIO = json.nome;
+                    // sessionStorage.ID_USUARIO = json.id_usuario;
+
+                    // setTimeout(function () {
+                    //     window.location = "/dashboard.html";
+                    // }, 1000); 
+
+                });
+
+            } else {
+
+                console.log("Houve um erro ao tentar cadastrar as respostas!");
+
+                resposta.text().then(texto => {
+                    console.error(texto);
+                    finalizarAguardar(texto);
+                });
+            }
+
+        }).catch(function (erro) {
+            console.log(erro);
+        })
+
+        return false;
     carregarDiv();
 }
 
