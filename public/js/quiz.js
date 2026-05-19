@@ -44,7 +44,7 @@ function recuar() {
 function cadastrarRespostas() {
     let usuario_respostas =
     {
-        "id_usuario": `${sessionStorage.getItem('ID_USUARIO')}`,
+        "id_usuario": sessionStorage.getItem('ID_USUARIO'),
         "respostas": []
     };
 
