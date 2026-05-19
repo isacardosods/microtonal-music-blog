@@ -1,141 +1,22 @@
-let perguntas = [];
+const perguntas = document.querySelectorAll('.pergunta');
 const btn_proximo = document.getElementById('next_btn');
 const btn_anterior = document.getElementById('back_btn');
 const btn_enviar = document.getElementById('btn_enviar');
 const cardErro = document.getElementById('cardErro');
 
-
-fetch("/quiz/buscarAlternativas")
-    .then(function (resposta) {
-
-        if (resposta.ok) {
-
-            resposta.json().then(function (dados) {
-
-                renderizarQuiz(dados);
-                perguntas = document.querySelectorAll('.pergunta')
-                verificar();
-
-            });
-
-        } else {
-
-            console.log("Erro ao carregar quiz");
-
-        }
-
-    }).catch(function (erro) {
-
-        console.log(erro);
-
-    });
-
-function renderizarQuiz(dados) {
-
-    let perguntas = {};
-
-    for (let i = 0; i < dados.length; i++) {
-
-        let linha = dados[i];
-
-        if (perguntas[linha.id_pergunta] == undefined) {
-
-            perguntas[linha.id_pergunta] = {
-                pergunta: linha.pergunta,
-                alternativas: []
-            };
-
-        }
-
-        perguntas[linha.id_pergunta].alternativas.push({
-            id_alternativa: linha.id_alternativa,
-            alternativa: linha.alternativa,
-            correta: linha.correta
-        });
-
-    }
-
-    console.log(perguntas);
-
-    let container = document.getElementById("perguntas-container");
-
-    container.innerHTML = "";
-
-    let contador = 0;
-
-    for (let id_pergunta in perguntas) {
-
-        let perguntaAtual = perguntas[id_pergunta];
-
-        let classePergunta = contador == 0
-            ? "pergunta ativa"
-            : "pergunta";
-
-        let perguntaHTML = `
-        
-            <div class="${classePergunta}">
-
-                <h2>
-                    ${id_pergunta}. ${perguntaAtual.pergunta}
-                </h2>
-
-                <div class="opcoes">
-        `;
-
-        for (let i = 0; i < perguntaAtual.alternativas.length; i++) {
-
-            let alternativa = perguntaAtual.alternativas[i];
-
-            perguntaHTML += `
-            
-                <label>
-
-                    <input
-                        type="radio"
-                        name="q${id_pergunta}"
-                        data-pergunta="${id_pergunta}"
-                        data-id_resposta="${alternativa.id_alternativa}"
-                        data-correta="${alternativa.correta}"
-                    >
-
-                    ${alternativa.alternativa}
-
-                </label>
-            `;
-        }
-
-        perguntaHTML += `
-                </div>
-
-            </div>
-        `;
-
-        container.innerHTML += perguntaHTML;
-
-        contador++;
-
-    }
-
-}
-
 let pergunta_atual = 0;
 
+verificar();
+
 function verificar() {
-
-    btn_proximo.style.display = 'block';
-
     btn_anterior.style.display = pergunta_atual <= 0 ? 'none' : 'block';
-
-    btn_enviar.style.display = 'none';
 
     if (pergunta_atual < perguntas.length) {
         perguntas[pergunta_atual].classList.add('ativa');
-    }
-
-    if (pergunta_atual == perguntas.length - 1) {
+    } else {
         btn_proximo.style.display = 'none';
+        btn_anterior.style.display = 'none';
         btn_enviar.style.display = 'block';
-
     }
 }
 
@@ -176,6 +57,7 @@ function cadastrarRespostas() {
             return;
         }
 
+        //muita dificuldade aqui, tirar dúvidas depois
         //obs: validar se a resposta é certa ou errada no controller
         //obs2: dataset é como se fosse um objeto que armazena os atributos que vc colocou nele a partir do front
         usuario_respostas.respostas.push({
