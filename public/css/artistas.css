@@ -479,6 +479,10 @@ main {
     justify-content: center;
 }
 
+.playlist-avaliacao .ativo{
+    background-color: #FFD700;
+}
+
 .playlist-avaliacao button:hover {
     background-color: #FFD700;
     transform: scale(1.05);
