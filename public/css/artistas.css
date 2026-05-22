@@ -1,0 +1,457 @@
+main {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    background-color: #000000;
+    justify-content: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.text-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 5vh;
+}
+
+.text-box .title {
+    text-align: center;
+    margin-top: 5vh;
+}
+
+.text-box .title p {
+    color: #fff;
+    font-size: 3em;
+    font-weight: 800;
+}
+
+.text-box .title span {
+    color: #FFD700;
+    font-size: 3em;
+    font-weight: 800;
+}
+
+.text-box .descricao {
+    text-align: center;
+    width: 80%;
+    color: #fff;
+    font-size: 1.3em;
+    margin-top: 5vh;
+}
+
+.container .see-more {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 3vh;
+}
+
+.container .see-more p {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.container .see-more img {
+    margin-top: 1vh;
+    height: 3vw;
+}
+
+.artistas-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(244, 244, 244);
+    padding: 8vh 0;
+}
+
+.artistas-container .text-box-artistas {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-bottom: 5vh;
+}
+
+.artistas-container .text-box-artistas .tittle-art {
+    font-size: 2.5em;
+    font-weight: 800;
+}
+
+.artistas-container .text-box-artistas .descricao-art {
+    font-size: 1.1em;
+    color: rgb(70, 70, 70);
+    margin-top: 1vh;
+}
+
+.artistas-cards {
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2vw;
+}
+
+.artistas-card {
+    width: calc(30% - 2vw);
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 14px;
+    overflow: hidden;
+    border: 1.5px solid #FFD700;
+    transition: 0.3s ease;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+}
+
+.artistas-card:hover{ 
+    transform: translateY(-6px); box-shadow: 0px 10px 25px rgba(0,0,0,0.08);
+ }
+
+.img {
+    width: 100%;
+    height: 160px;
+    background-size: cover;
+    background-position: center;
+}
+
+.textos {
+    display: flex;
+    flex-direction: column;
+    padding: 16px;
+}
+
+.textos .nome {
+    font-size: 1.15em;
+    font-weight: 700;
+    margin-bottom: 0.3vh;
+}
+
+.textos .genero {
+    font-size: 0.9em;
+    font-weight: 700;
+    color: #b39400;
+    margin-bottom: 1vh;
+}
+
+.textos .descricao {
+    font-size: 1em;
+    color: rgb(70, 70, 70);
+    line-height: 1.4;
+}
+
+.king {
+    background-image: url('../assets/img/king.png');
+    background-color: black;
+}
+
+.angine {
+    background-image: url('../assets/img/angine.webp');
+}
+
+
+.albuns-container {
+    display: flex;
+    width: 100%;
+    height: 70vh;
+    justify-content: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    padding: 10vh 0;
+}
+
+
+.albuns-content {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.albuns-content .text-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin-bottom: 6vh;
+}
+
+.albuns-content .text-box span {
+    color: #FFD700;
+    font-size: 1em;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.albuns-content .text-box p {
+    color: white;
+    font-size: 3em;
+    font-weight: 800;
+}
+
+.carrossel {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+}
+
+.button {
+    width: 60px;
+    height: 60px;
+    min-height: 60px;
+    border-radius: 50%;
+    background-color: #FFD700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.button img {
+    width: 20px;
+    height: 20px;
+}
+
+.button:hover {
+    background-color: #c4a500;
+    transform: scale(1.05);
+}
+
+.album {
+    width: 70vw;
+    height: 50vh;
+    background-color: white;
+    border-radius: 20px;
+    overflow: hidden;
+    display: none;
+    flex-direction: column;
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+    transition: 0.3s ease;
+}
+
+.album:hover {
+    transform: translateY(-3px);
+}
+
+.principal {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+}
+
+.capa {
+    width: 40%;
+    background-size: cover;
+    background-position: center;
+}
+
+.flying {
+    background-image: url('../assets/img/flying-microtonal.jpg');
+}
+
+.clara-crocodilo {
+    background-image: url('../assets/img/clara-crocodilo.jpg');
+}
+
+.informacoes {
+    width: 60%;
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(246, 246, 246);
+}
+
+.nome {
+    font-size: 2.8em;
+    font-weight: 800;
+    color: black;
+}
+
+.artista {
+    margin-top: 1vh;
+    font-size: 1.3em;
+    font-weight: 700;
+    color: #b39400;
+}
+
+.desc {
+    margin-top: 3vh;
+    font-size: 1.5em;
+    color: rgb(60, 60, 60);
+}
+
+.curiosidade {
+    width: 100;
+    height: 15%;
+    background-color: #FFD700;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.curiosidade .text span {
+    font-size: 1.1em;
+    font-weight: 800;
+    margin-bottom: 1vh;
+    color: black;
+}
+
+.curiosidade .text p {
+    color: rgb(30, 30, 30);
+}
+
+.playlist-container {
+    width: 100%;
+    min-height: 100vh;
+    background-color: rgb(245, 245, 245);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10vh 0;
+}
+
+.playlist-title {
+    text-align: center;
+    margin-bottom: 6vh;
+}
+
+.playlist-title span {
+    color: #FFD700;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.playlist-title p {
+    font-size: 3em;
+    font-weight: 800;
+}
+
+.playlist-musicas {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 3vh;
+}
+
+.playlist-musica {
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.playlist-musica:hover {
+    border: 2px solid #FFD700;
+    transform: translateY(-3px);
+    box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.playlist-left {
+    display: flex;
+    align-items: center;
+    gap: 1.5vw;
+    width: 35%;
+}
+
+.playlist-capa {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.playlist-king {
+    background-image: url('../assets/img/king.png');
+}
+
+.playlist-sevish {
+    background-image: url('../assets/img/sevish.jpg');
+}
+
+.playlist-hermeto {
+    background-image: url('../assets/img/hermeto.jpg');
+}
+
+.playlist-nome {
+    font-size: 1.2em;
+    font-weight: 700;
+}
+
+.playlist-artista {
+    color: rgb(100, 100, 100);
+    margin-top: 0.5vh;
+}
+
+.playlist-player {
+    width: 40%;
+    display: flex;
+    justify-content: center;
+}
+
+.playlist-audio {
+    width: 100%;
+    height: 45px;
+    border-radius: 50px;
+}
+
+.playlist-avaliacao {
+    display: flex;
+    gap: 1vw;
+}
+
+.playlist-avaliacao button {
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgb(240, 240, 240);
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-size: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.playlist-avaliacao button:hover {
+    background-color: #FFD700;
+    transform: scale(1.05);
+}
+
+.spotify-link {
+    margin-top: 3vh;
+    width: fit-content;
+    padding: 12px 20px;
+    background-color: #FFD700;
+    color: black;
+    font-weight: 700;
+    border-radius: 10px;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.spotify-link:hover {
+    background-color: #c5a800;
+    transform: translateY(-2px);
+}
