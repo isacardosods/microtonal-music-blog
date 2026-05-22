@@ -19,7 +19,7 @@ function cadastrarRespostas(id_usuario, id_resposta) {
         inserts.push(database.executar(instrucaoSql));
 
         console.log("VALORES:", id_usuario, id_resposta);
-        console.log(instrucaoSql);n
+        console.log(instrucaoSql);
     }
 
     //é utilizado para receber todos os inserts sem interromper a execução
