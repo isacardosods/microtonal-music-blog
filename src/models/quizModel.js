@@ -1,7 +1,7 @@
 var database = require("../database/config")
 
 function cadastrarRespostas(id_usuario, id_resposta) {
-    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarRespostas():", id_usuario, id_resposta);
+    console.log("ACESSEI O QUIZ MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarRespostas():", id_usuario, id_resposta);
     let inserts = [];
 
     for (let i = 0; i < id_resposta.length; i++) {
