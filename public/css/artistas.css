@@ -119,7 +119,7 @@ main {
 
 .img {
     width: 100%;
-    height: 160px;
+    height: 25vh;
     background-size: cover;
     background-position: center;
 }
@@ -146,7 +146,6 @@ main {
 .textos .descricao {
     font-size: 1em;
     color: rgb(70, 70, 70);
-    line-height: 1.4;
 }
 
 .king {
@@ -156,6 +155,22 @@ main {
 
 .angine {
     background-image: url('../assets/img/angine.webp');
+}
+
+.itamar{
+    background-image: url('../assets/img/itamar.webp');
+}
+
+.ozzetti{
+    background-image: url('../assets/img/na-ozzeti.png');
+}
+
+.barnabe{
+    background-image: url('../assets/img/arrigo.jpg');
+}
+
+.rumo{
+    background-image: url('../assets/img/grupo-rumo.jpg');
 }
 
 
@@ -254,9 +269,11 @@ main {
 }
 
 .capa {
-    width: 40%;
-    background-size: cover;
+    width: 35%;
+    background-size: contain;
     background-position: center;
+    background-repeat: no-repeat;
+    background-color: black;
 }
 
 .flying {
@@ -265,6 +282,22 @@ main {
 
 .clara-crocodilo {
     background-image: url('../assets/img/clara-crocodilo.jpg');
+}
+
+.beleleu{
+    background-image: url('../assets/img/beleleu.jpg');
+}
+
+.na{
+    background-image: url('../assets/img/na.jpeg');
+}
+
+.rumo{
+    background-image: url('../assets/img/rumo.jpg');
+}
+
+.angine-album{
+    background-image: url('../assets/img/angine-album.jpeg');
 }
 
 .informacoes {
@@ -382,15 +415,27 @@ main {
 }
 
 .playlist-king {
-    background-image: url('../assets/img/king.png');
+    background-image: url('../assets/img/flying-microtonal.jpg');
 }
 
-.playlist-sevish {
-    background-image: url('../assets/img/sevish.jpg');
+.playlist-arrigo {
+    background-image: url('../assets/img/clara-crocodilo.jpg');
 }
 
-.playlist-hermeto {
-    background-image: url('../assets/img/hermeto.jpg');
+.playlist-itamar {
+    background-image: url('../assets/img/beleleu.jpg');
+}
+
+.playlist-rumo {
+    background-image: url('../assets/img/rumo.jpg');
+}
+
+.playlist-na{
+    background-image: url('../assets/img/na.jpeg');
+}
+
+.playlist-angine{
+    background-image: url('../assets/img/angine-album.jpeg');
 }
 
 .playlist-nome {
@@ -439,7 +484,7 @@ main {
     transform: scale(1.05);
 }
 
-.spotify-link {
+.yt-link {
     margin-top: 3vh;
     width: fit-content;
     padding: 12px 20px;
@@ -451,7 +496,7 @@ main {
     transition: 0.3s ease;
 }
 
-.spotify-link:hover {
+.yt-link:hover {
     background-color: #c5a800;
     transform: translateY(-2px);
 }
