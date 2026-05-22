@@ -46,37 +46,70 @@ main {
     margin-top: 5vh;
 }
 
-.origem {
+.origem{
     width: 100%;
-    height: 60vh;
+    padding: 60px;
     display: flex;
     flex-direction: column;
+    gap: 120px;
+    background-color: #ffffff;
+    box-sizing: border-box;
+}
+
+.content-row{
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
     align-items: center;
+    gap: 5vw;
 }
 
-.origem .text-box {
-    margin-top: 5vh;
-    width: 50%;
+.content-row.reverse .text-side{
+    order: 2;
 }
 
-.origem .text-box span {
-    font-size: 2em;
-    font-weight: 700;
+.content-row.reverse .image-side{
+    order: 1;
 }
 
-.origem .text-box p {
+.text-side h2{
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: #111;
+}
+
+.text-side p{
     font-size: 1.3em;
-    font-weight: 500;
-    margin-top: 2vh;
+    color: #444;
+    margin-bottom: 2vh;
     text-align: justify;
+}
+
+.image-side{
+    position: relative;
+    width: fit-content;
+    border: 5px solid #FFD700;
+    border-radius: 14px;
+}
+
+.image-side img{
+    width: 100%;
+    max-width: 550px;
+    display: block;
+    border-radius: 10px;
+    position: relative;
+    z-index: 2;
 }
 
 .vanguarda-container {
     width: 100%;
-    height: 90vh;
+    height: 110vh;
     display: flex;
     border-top: 1px solid #FFD700;
     border-bottom: 1px solid #FFD700;
+    align-items: center;
 }
 
 .vanguarda-content {
@@ -92,10 +125,9 @@ main {
     flex-direction: column;
     justify-content: center;
     gap: 2vh;
-    width: 50%;
-    height: 78%;
-    padding-top: 6vh;
-    padding-right: 2.5vw;
+    width: 60%;
+    height: 80%;
+    margin-right: 3vw;
 }
 
 .imagem {
@@ -175,6 +207,10 @@ main {
     font-weight: 700;
 }
 
+.destaques {
+    color: #151515;
+}
+
 .container-linha {
     width: 100%;
     display: flex;
@@ -184,9 +220,15 @@ main {
     background-color: rgb(244, 244, 244);
 }
 
+.container-linha .titlezinho {
+    font-size: 1.3em;
+    color: #FFD700;
+    font-weight: 600;
+    margin-top: 3vh;
+}
+
 .container-linha h1 {
     font-size: 2em;
-    margin-top: 5vh;
 }
 
 .linha-tempo {
@@ -197,10 +239,11 @@ main {
     width: 35%;
 }
 
-.linha-tempo li {
+.linha-tempo .card-linha {
     padding: 20px;
     background-color: white;
-    margin-bottom: 1vh;
+    margin-bottom: -5vh;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 .conteudo {
@@ -229,7 +272,7 @@ main {
 }
 
 /*odd é usado para selecionar os elementos ímpares enquanto o even é para os pares!!! o transform desloca as caixas*/
-.linha-tempo li:nth-child(odd) {
+.linha-tempo .card-linha:nth-child(odd) {
     border-radius: 5px 0px 5px 5px;
     float: left;
     transform: translateX(-22vw);
@@ -237,7 +280,7 @@ main {
     border-bottom: 5px solid #FFD700;
 }
 
-.linha-tempo li:nth-child(even) {
+.linha-tempo .card-linha:nth-child(even) {
     border-radius: 0px 5px 5px 5px;
     float: right;
     transform: translateX(22vw);
@@ -246,7 +289,6 @@ main {
 }
 
 /* o before/after cria um elemento 'falso' através do css, nesse caso é utilizado para criar a linha, sem necessariamente ter escrito ela no html */
-
 .linha-tempo::before {
     content: "";
     position: absolute;
