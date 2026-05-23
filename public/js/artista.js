@@ -29,62 +29,6 @@ right_arrow.addEventListener('click', () => {
     albuns[contador].style.display = 'flex';
 })
 
-async function buscarLikes() {
-    fetch(`/artistas/buscarLikes/${id_usuario}`, {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json"
-        }
-    }).then(function (resposta) {
-        console.log("ESTOU NO THEN DO buscarLikes()!")
-
-        if (resposta.ok) {
-            console.log(resposta);
-            console.log('Likes buscados com sucesso!')
-
-            resposta.json().then(json => {
-                let response = JSON.stringify(json);
-                console.log(response);
-            });
-
-        } else {
-
-            console.log("Houve um erro ao tentar buscar os likes!");
-
-            resposta.text().then(texto => {
-                console.error(texto);
-            });
-        }
-
-    }).catch(function (erro) {
-        console.log(erro);
-    })
-}
-
-async function cadastrarLikes() {
-    fetch("/artistas/cadastrarLikes", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify(like_musicas)
-    }).then(function (resposta) {
-        console.log("resposta: ", resposta);
-
-        if (resposta.ok) {
-            console.log("Curtida cadastrada com sucesso");
-
-        } else {
-            throw "Houve um erro ao tentar cadastrar curtida!";
-        }
-    })
-        .catch(function (resposta) {
-            console.log(`#ERRO: ${resposta}`);
-        });
-}
-
-buscarLikes();
-
 let like_musicas = [
     {
         "id_usuario": id_usuario,
@@ -118,6 +62,75 @@ let like_musicas = [
     }
 ]
 
+async function buscarLikes() {
+    fetch(`/artistas/buscarLikes/${id_usuario}`, {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    }).then(function (resposta) {
+        console.log("ESTOU NO THEN DO buscarLikes()!")
+
+        if (resposta.ok) {
+            console.log(resposta);
+            console.log('Likes buscados com sucesso!')
+
+            resposta.json().then(json => {
+                let response = JSON.stringify(json);
+                console.log(response);
+
+                for (let i = 0; i < json.length; i++) {
+                   let item = json[i];         
+                   let index = item.fk_musica - 1;
+
+                    like_musicas[index].tipo_like = item.tipo_like;
+
+                    if (item.tipo_like == 'LIKE') {
+                        likes[index].classList.add('ativo');
+                    } else if (item.tipo_like == 'DISLIKE') {
+                        dislikes[index].classList.add('ativo');
+                    }
+                }
+            });
+
+        } else {
+
+            console.log("Houve um erro ao tentar buscar os likes!");
+
+            resposta.text().then(texto => {
+                console.error(texto);
+            });
+        }
+
+    }).catch(function (erro) {
+        console.log(erro);
+    })
+}
+
+async function cadastrarLikes(index) {
+    fetch("/artistas/cadastrarLikes", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json",
+        },
+        body: JSON.stringify(like_musicas[index])
+    }).then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+            console.log("Curtida cadastrada com sucesso");
+
+        } else {
+            throw "Houve um erro ao tentar cadastrar curtida!";
+        }
+    })
+        .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+        });
+}
+
+buscarLikes();
+
 for (let i = 0; i < likes.length; i++) {
     likes[i].addEventListener('click', () => {
         if (dislikes[i].classList.contains('ativo')) {
@@ -126,7 +139,7 @@ for (let i = 0; i < likes.length; i++) {
         likes[i].classList.toggle('ativo');
 
         like_musicas[i].tipo_like = likes[i].classList.contains('ativo') ? 'LIKE' : 'DEFAULT';
-        cadastrarLikes()
+        cadastrarLikes(i)
 
     })
 }
@@ -140,7 +153,7 @@ for (let i = 0; i < dislikes.length; i++) {
         dislikes[i].classList.toggle('ativo');
 
         like_musicas[i].tipo_like = dislikes[i].classList.contains('ativo') ? 'DISLIKE' : 'DEFAULT';
-        cadastrarLikes();
+        cadastrarLikes(i);
 
     })
 
