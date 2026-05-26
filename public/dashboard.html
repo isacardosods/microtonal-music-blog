@@ -12,13 +12,39 @@
 </head>
 
 <body>
+    <div class="left-painel">
+        <div class="logo">
+            <a href="index.html"><span>Entretons</span></a>
+            <img src="./assets/img/logo-img.svg" alt="logo-img">
+        </div> 
+
+        <span>MENU</span>
+        <ul>
+            <li>
+                <img src="assets/img/dashboard.svg" alt="">
+                <a href="dashboard.html">Dashboard</a>
+            </li>
+            <li>
+                <img src="assets/img/estatisticas.svg" alt="">
+                <a href="#">Estatísticas</a>
+            </li>
+        </ul>
+
+        <span>GERAL</span>
+        <ul>
+            <li>
+                <img src="assets/img/logout.svg" alt="">
+                <a href="index.html" onclick="limparSessao()">Logout</a>
+            </li>
+        </ul>
+    </div>
+    
     <main>
 
         <div class="top-painel">
             <div class="text-box">
                 <p id="bem_vindo"></p>
                 <span>Acompanhe sua evolução </span>
-                </div>
             </div>
         </div>
 
@@ -63,8 +89,10 @@
                 </div>
             </div>
         </div>
-
+        
     </main>
 </body>
 <script src="js/dashboard.js"></script>
+<script src="js/sessao.js"></script>
+
 </html>

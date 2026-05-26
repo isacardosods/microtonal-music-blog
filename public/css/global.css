@@ -126,3 +126,82 @@ main {
     font-weight: 500;
     font-size: 20px;
 }
+
+.popup_login {
+  position: fixed;
+  bottom: 3vh;
+  right: 1.5vw;
+  z-index: 999;
+  max-width: 360px;
+  background: #f5f5f0;
+  border: 2px solid #f0c000;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.popup_login .icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.popup_login .icon-img {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #f0c000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.popup_login .icon-img img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+
+.popup_login .textbox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+}
+
+.popup_login .title {
+  font-size: 1.2em;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+
+.popup_login .descricao {
+  font-size: 1em;
+  color: #555;
+}
+
+.popup_login .btn {
+  display: flex;
+  justify-content: center;
+}
+
+.popup_login .btn_login {
+  background: #f0c000;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 1em;
+  font-weight: 700;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+.popup_login .btn_login:hover { 
+    background: #d4a900; 
+}

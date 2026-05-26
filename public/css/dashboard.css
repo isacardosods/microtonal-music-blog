@@ -1,7 +1,11 @@
+body{
+    display: flex;
+}
+
 main {
-    margin: 1%;
     display: flex;
     flex-direction: column;
+    padding: 1%;
 }
 
 .top-painel {
@@ -140,4 +144,65 @@ main {
 
 .individual {
     display: none;
+}
+
+.left-painel {
+    min-width: 12vw;
+    background-color: #000000;
+    color: #f2c200;
+    padding: 10px 5px 5px 10px;
+    min-height: 100vh;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10vh;
+}
+
+.left-painel ul {
+    margin-bottom: 5vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 1vh;
+}
+
+
+.left-painel span {
+    font-size: 1.3em;
+    font-weight: 700;
+}
+
+.left-painel ul li {
+    list-style: none;
+    margin-bottom: 0.5vh;
+    display: flex;
+    align-items: center;
+}
+
+.left-painel ul li a{
+    text-decoration: none;
+    color: white;
+    font-size: 1.5em;
+    padding-left: 5px;
+}
+
+.logo{
+    margin-left: 12px;
+}
+
+.logo span {
+    font-weight: 800;
+    font-size: 2em;
+}
+
+.logo a {
+    text-decoration: none;
+    color: #f2c200;
+}
+
+.logo img{
+    margin-left: 10px;
+    width: 40px;
 }
