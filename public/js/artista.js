@@ -3,10 +3,22 @@ const right_arrow = document.getElementById('right');
 const albuns = document.querySelectorAll('.album');
 const likes = document.querySelectorAll('.like');
 const dislikes = document.querySelectorAll('.dislike');
+const div_login_alert = document.querySelector('.popup_login');
+
 
 let contador = 0;
 let id_usuario = sessionStorage.getItem('ID_USUARIO');
 albuns[0].style.display = 'flex';
+
+function validarSessao() {
+    if (!id_usuario) {
+        div_login_alert.style.display = 'flex';
+    }
+} validarSessao();
+
+function fecharPopup() {
+    div_login_alert.style.display = 'none';
+}
 
 left_arrow.addEventListener('click', () => {
     if (contador <= 0) return;
@@ -80,8 +92,8 @@ async function buscarLikes() {
                 console.log(response);
 
                 for (let i = 0; i < json.length; i++) {
-                   let item = json[i];         
-                   let index = item.fk_musica - 1;
+                    let item = json[i];
+                    let index = item.fk_musica - 1;
 
                     like_musicas[index].tipo_like = item.tipo_like;
 
@@ -121,6 +133,7 @@ async function cadastrarLikes(index) {
             console.log("Curtida cadastrada com sucesso");
 
         } else {
+            validarSessao();
             throw "Houve um erro ao tentar cadastrar curtida!";
         }
     })
@@ -130,17 +143,16 @@ async function cadastrarLikes(index) {
 }
 
 buscarLikes();
-
 for (let i = 0; i < likes.length; i++) {
     likes[i].addEventListener('click', () => {
+        
         if (dislikes[i].classList.contains('ativo')) {
             dislikes[i].classList.remove('ativo');
         };
         likes[i].classList.toggle('ativo');
-
+        
         like_musicas[i].tipo_like = likes[i].classList.contains('ativo') ? 'LIKE' : 'DEFAULT';
         cadastrarLikes(i)
-
     })
 }
 
@@ -156,7 +168,6 @@ for (let i = 0; i < dislikes.length; i++) {
         cadastrarLikes(i);
 
     })
-
 }
 
 

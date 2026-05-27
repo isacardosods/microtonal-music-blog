@@ -1,12 +1,3 @@
-function validarSessao() {
-    const div_login_alert = document.getElementById('login_alert');
-    var id = sessionStorage.ID_USUARIO;
-
-    if (id == null) {
-      div_login_alert.style.display = 'flex';
-    } 
-}
-
 function limparSessao() {
     sessionStorage.clear();
 }

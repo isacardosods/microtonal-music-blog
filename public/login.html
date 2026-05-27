@@ -37,11 +37,6 @@
         </div>
 
         <div class="form-container">
-            <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
-                </div>
-            </div>
 
             <div class="form">
                 <span>Email:</span>
@@ -54,6 +49,9 @@
                     <button onclick="entrar()">Entrar</button>
                 </div>
 
+                <div id="div_erros_login"></div>
+
+
                 <div class="direcionamento-cadastro">
                     <span class="span-cadastro">Não tem uma conta?</span>
                     <span class="link-cadastro span-cadastro"><a href="./cadastro.html">Cadastre-se</a></span>
@@ -63,7 +61,18 @@
                     <img src="./assets/aguarde-orange.gif" id="loading-gif">
                 </div>
 
-                <div id="div_erros_login"></div>
+                <div class="popup_login" id="cardErro">
+                    <div class="icon">
+                        <div class="icon-img">
+                            <img id="img_icon" src="./assets/img/erro.svg" alt="">
+                        </div>
+
+                        <div class="textbox">
+                            <p class="title" id="title_info">Erro!</p>
+                            <p class="descricao" id="mensagem_erro"></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </main>

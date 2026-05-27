@@ -1,3 +1,5 @@
+const img_icon = document.getElementById('img_icon');
+
 function cadastrar() {
 
   var nomeVar = nome_input.value;
@@ -5,24 +7,6 @@ function cadastrar() {
   var telefoneVar = telefone_input.value;
   var senhaVar = senha_input.value;
   var confirmacaoSenhaVar = confirmacao_senha_input.value;
-
-  //refatorando esse codigo com um laço de repetição+vetor
-  // if (
-  //   nomeVar == "" ||
-  //   emailVar == "" ||
-  //   telefoneVar == "" ||
-  //   senhaVar == "" ||
-  //   confirmacaoSenhaVar == ""
-  // ) {
-  //   cardErro.style.display = "block";
-  //   mensagem_erro.innerHTML =
-  //     "(Mensagem de erro para todos os campos em branco)";
-
-  //   finalizarAguardar();
-  //   return false;
-  // } else {
-  //   setInterval(sumirMensagem, 5000);
-  // }
 
   let lista_inputs = [nomeVar, emailVar, telefoneVar, senhaVar, confirmacaoSenhaVar];
   let campo_vazio = false;
@@ -34,8 +18,8 @@ function cadastrar() {
     }
   }
   if (campo_vazio) {
-    cardErro.style.display = "block";
-    mensagem_erro.innerHTML = '(Mensagem de erro para todos os campos em branco)'
+    cardErro.style.display = "flex";
+    mensagem_erro.innerHTML = 'Todos os campos em branco!'
 
     finalizarAguardar();
     return false;
@@ -44,18 +28,19 @@ function cadastrar() {
   }
 
   if (nomeVar.length > 1 && emailVar.includes('@') && emailVar.includes('.') && senhaVar.length >= 6 && confirmacaoSenhaVar == senhaVar && telefoneVar.length == 11) {
-    cardErro.style.display = "block";
+    div_erros_login.innerHTML =
 
-    mensagem_erro.innerHTML =
-      "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
-  } else {
-    cardErro.style.display = "block";
-
-    mensagem_erro.innerHTML =
-      "Erro!";
+    cardErro.style.display = "flex";
+    img_icon.src = '../assets/img/login.svg';
+    title_info.innerHTML = 'Cadastro realizado com sucesso!'
+    mensagem_erro.innerHTML = "Redirecionando para tela de login";
+  } 
+  else { 
+    cardErro.style.display = "flex";
+    mensagem_erro.innerHTML = "Preencha os campos corretamente!";
 
     return;
-  }
+    }
 
   fetch("/usuarios/cadastrar", {
     method: "POST",
@@ -73,10 +58,7 @@ function cadastrar() {
       console.log("resposta: ", resposta);
 
       if (resposta.ok) {
-        cardErro.style.display = "block";
-
-        mensagem_erro.innerHTML =
-          "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+        cardErro.style.display = "flex";
 
         setTimeout(() => {
           window.location = "login.html";

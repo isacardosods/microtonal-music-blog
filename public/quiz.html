@@ -273,6 +273,26 @@
         </div>
     </main>
 
+    <div class="popup_login">
+        <div class="close" onclick="fecharPopup()">X</div>
+        <div class="icon">
+            <div class="icon-img">
+                <img src="./assets/img/login.svg" alt="">
+            </div>
+
+            <div class="textbox">
+                <p class="title">Você não está logado</p>
+                <p class="descricao">Faça login para acessar recursos exclusivos e salvar suas preferências</p>
+            </div>
+        </div>
+
+        <div class="btn">
+            <button class="btn_login" onclick="mudarJanela('./login.html')">Fazer login</button>
+        </div>
+    </div>
+
+
+
     <footer>
         <div>
             <span>
@@ -284,5 +304,6 @@
 </body>
 <script src="/js/quiz.js"></script>
 <script src="/js/windows.js"></script>
+<script src="/js/sessao.js"></script>
 
 </html>

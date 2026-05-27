@@ -575,6 +575,7 @@
     </div>
 
     <div class="popup_login">
+        <div class="close" onclick="fecharPopup()">X</div>
         <div class="icon">
             <div class="icon-img">
                 <img src="./assets/img/login.svg" alt="">
@@ -582,12 +583,12 @@
 
             <div class="textbox">
                 <p class="title">Você não está logado</p>
-                <p class="descricao">Faça login para acessar recursos exclusivos e salvar suas preferências.</p>
+                <p class="descricao">Faça login para acessar recursos exclusivos e salvar suas preferências</p>
             </div>
         </div>
 
         <div class="btn">
-            <button class="btn_login">Fazer login</button>
+            <button class="btn_login" onclick="mudarJanela('./login.html')">Fazer login</button>
         </div>
     </div>
 
@@ -599,5 +600,6 @@
 </body>
 <script src="./js/artista.js"></script>
 <script src="./js/windows.js"></script>
+<script src="./js/sessao.js"></script>
 
 </html>

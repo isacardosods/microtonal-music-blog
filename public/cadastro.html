@@ -6,11 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/cadastro.css">
-
-    <script src="./js/windows.js"></script>
-    <script src="./js/sessao.js"></script>
-    <script src="./js/cadastro.js"></script>
-
     <title>Entretons | Login</title>
 </head>
 
@@ -36,43 +31,53 @@
             <p>Preencha as informações abaixo para prosseguir com seu cadastro</p>
         </div>
         <div class="form-container">
-            <div class="alerta_erro">
-                <div class="card_erro" id="cardErro">
-                    <span id="mensagem_erro"></span>
-                </div>
-                <div class="form">
+            <div class="form">
 
-                    <span>Nome:</span>
-                    <input id="nome_input" type="text" placeholder="Digite seu nome...">
+                <span>Nome:</span>
+                <input id="nome_input" type="text" placeholder="Digite seu nome...">
 
-                    <span>Email:</span>
-                    <input id="email_input" type="text" placeholder="Digite seu email...">
+                <span>Email:</span>
+                <input id="email_input" type="text" placeholder="Digite seu email...">
 
-                    <span>Telefone:</span>
-                    <input id="telefone_input" type="text" placeholder="Digite seu email...">
+                <span>Telefone:</span>
+                <input id="telefone_input" type="text" placeholder="Digite seu email...">
 
-                    <span>Senha:</span>
-                    <input id="senha_input" type="password" placeholder="Digite sua senha...">
+                <span>Senha:</span>
+                <input id="senha_input" type="password" placeholder="Digite sua senha...">
 
-                    <span>Confirme sua senha:</span>
-                    <input id="confirmacao_senha_input" type="password" placeholder="Confirme sua senha...">
+                <span>Confirme sua senha:</span>
+                <input id="confirmacao_senha_input" type="password" placeholder="Confirme sua senha...">
 
-                    <div class="btn">
-                        <button onclick="cadastrar()">Cadastrar</button>
-                    </div>
-
-                    <div class="direcionamento-login">
-                        <span class="span-login">Já tem uma conta?</span><span class="link-login span-login"><a
-                                href="./login.html">Login</a></span>
-                    </div>
-                </div>
-
-                <div id="div_aguardar" class="loading-div">
-                    <img src="./assets/aguarde-orange.gif" id="loading-gif" />
+                <div class="btn">
+                    <button onclick="cadastrar()">Cadastrar</button>
                 </div>
 
                 <div id="div_erros_login"></div>
+                
+                <div class="direcionamento-login">
+                    <span class="span-login">Já tem uma conta?</span><span class="link-login span-login"><a
+                            href="./login.html">Login</a></span>
+                </div>
             </div>
+
+            <div id="div_aguardar" class="loading-div">
+                <img src="./assets/aguarde-orange.gif" id="loading-gif" />
+            </div>
+
+            <div class="popup_login" id="cardErro">
+                <div class="icon">
+                    <div class="icon-img">
+                        <img id="img_icon" src="./assets/img/erro.svg" alt="">
+                    </div>
+
+                    <div class="textbox">
+                        <p class="title" id="title_info">Erro!</p>
+                        <p class="descricao" id="mensagem_erro"></p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </main>
 
     <footer>
@@ -81,5 +86,7 @@
         </div>
     </footer>
 </body>
-
+    <script src="./js/windows.js"></script>
+    <script src="./js/sessao.js"></script>
+    <script src="./js/cadastro.js"></script>
 </html>

@@ -3,10 +3,23 @@ const btn_proximo = document.getElementById('next_btn');
 const btn_anterior = document.getElementById('back_btn');
 const btn_enviar = document.getElementById('btn_enviar');
 const cardErro = document.getElementById('cardErro');
+const div_login_alert = document.querySelector('.popup_login');
 
 let pergunta_atual = 0;
 
 verificar();
+
+function validarSessao() {
+    var id_usuario = sessionStorage.getItem('ID_USUARIO');
+
+    if (!id_usuario) {
+        div_login_alert.style.display = 'flex';
+    }
+} validarSessao();
+
+function fecharPopup() {
+    div_login_alert.style.display = 'none';
+}
 
 function verificar() {
     btn_anterior.style.display = pergunta_atual <= 0 ? 'none' : 'block';
@@ -57,9 +70,7 @@ function cadastrarRespostas() {
             return;
         }
 
-        //muita dificuldade aqui, tirar dúvidas depois
-        //obs: validar se a resposta é certa ou errada no controller
-        //obs2: dataset é como se fosse um objeto que armazena os atributos que vc colocou nele a partir do front
+        //obs: dataset é como se fosse um objeto que armazena os atributos que vc colocou nele a partir do front
         usuario_respostas.respostas.push({
             id_pergunta: questao.dataset.pergunta,
             id_alternativa: questao.dataset.id_resposta
@@ -89,14 +100,11 @@ function cadastrarRespostas() {
             });
 
         } else {
-
             console.log("Houve um erro ao tentar cadastrar as respostas!");
+            validarSessao();
 
             resposta.text().then(texto => {
                 console.error(texto);
-
-                cardErro.style.display = "flex";
-                mensagem_erro.innerHTML = `É necessário estar logado para responder!`;
             });
         }
 
@@ -109,7 +117,7 @@ function cadastrarRespostas() {
 
 function carregarDiv() {
     cardErro.style.display = "flex";
-    mensagem_erro.innerHTML = `Respostas enviadas! Redirecionando para Home...`;
+    mensagem_erro.innerHTML = `Respostas enviadas! Redirecionando...`;
 
     setTimeout(() => {
         window.location = '../index.html';
