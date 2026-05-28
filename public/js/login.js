@@ -32,6 +32,10 @@ function entrar() {
         if (resposta.ok) {
             console.log(resposta);
             console.log('Login efetuado com sucesso!')
+            cardErro.style.display = "flex";
+            img_icon.src = '../assets/img/login.svg';
+            title_info.innerHTML = 'Login realizado com sucesso!'
+            mensagem_erro.innerHTML = "Redirecionando para dashboard";
 
             resposta.json().then(json => {
                 console.log(json);

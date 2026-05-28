@@ -2,8 +2,7 @@ const perguntas = document.querySelectorAll('.pergunta');
 const btn_proximo = document.getElementById('next_btn');
 const btn_anterior = document.getElementById('back_btn');
 const btn_enviar = document.getElementById('btn_enviar');
-const cardErro = document.getElementById('cardErro');
-const div_login_alert = document.querySelector('.popup_login');
+const cardErro = document.querySelector('.popup_login');
 
 let pergunta_atual = 0;
 
@@ -13,12 +12,12 @@ function validarSessao() {
     var id_usuario = sessionStorage.getItem('ID_USUARIO');
 
     if (!id_usuario) {
-        div_login_alert.style.display = 'flex';
+        cardErro.style.display = 'flex';
     }
 } validarSessao();
 
 function fecharPopup() {
-    div_login_alert.style.display = 'none';
+    cardErro.style.display = 'none';
 }
 
 function verificar() {
@@ -76,6 +75,7 @@ function cadastrarRespostas() {
             id_alternativa: questao.dataset.id_resposta
         });
 
+        console.log(usuario_respostas)
     }
 
     console.log('cadastro: ', usuario_respostas);
@@ -117,7 +117,9 @@ function cadastrarRespostas() {
 
 function carregarDiv() {
     cardErro.style.display = "flex";
-    mensagem_erro.innerHTML = `Respostas enviadas! Redirecionando...`;
+    img_icon.src = '../assets/img/ok.svg';
+    title_info.innerHTML = 'Parabéns!'
+    mensagem_erro.innerHTML = "Respostas enviadas com sucesso";
 
     setTimeout(() => {
         window.location = '../index.html';
