@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entretons | Dashboard</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.min.js" crossorigin="anonymous"
-        referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chartjs-plugin-datalabels/2.2.0/chartjs-plugin-datalabels.min.js" integrity="sha512-JPcRR8yFa8mmCsfrw4TNte1ZvF1e3+1SdGMslZvmrzDYxS69J7J49vkFL8u6u8PlPJK+H3voElBtUCzaXj+6ig==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <link rel="stylesheet" href="css/global.css">
     <link rel="stylesheet" href="css/dashboard.css">
 </head>
@@ -26,7 +26,7 @@
             </li>
             <li>
                 <img src="assets/img/estatisticas.svg" alt="">
-                <a href="#">Estatísticas</a>
+                <a href="#">Ranking</a>
             </li>
         </ul>
 
@@ -44,48 +44,47 @@
         <div class="top-painel">
             <div class="text-box">
                 <p id="bem_vindo"></p>
-                <span>Acompanhe sua evolução </span>
+                <span>Acompanhe seus status</span>
             </div>
         </div>
 
         <div class="indicadores">
             <div class="indicador">
-                <span class="title">Afinação mais explorado</span>
-                <span class="value">31-EDO</span>
-                <span class="legenda">Preferência atual</span>
-            </div>
-
-            <div class="indicador">
-                <span class="title">Menor exploração</span>
-                <span class="value">19-EDO</span>
-                <span class="legenda">Pouco acessado</span>
-            </div>
-
-            <div class="indicador">
-                <span class="title">Exploração avançada</span>
-                <span class="value">Maqam</span>
-                <span class="legenda">Alta complexidade</span>
+                <span class="title">Total de tentativas</span>
+                <span class="value" id="tentativas_value"></span>
+                <span class="legenda">Não desista! :)</span>
             </div>
 
             <div class="indicador">
                 <span class="title">Respostas corretas</span>
-                <span class="value">x</span>
-                <span class="legenda">Última tentativa</span>
+                <span class="value" id="corretas_value"></span>
+                <span class="legenda">Todas as tentativas</span>
+            </div>
+
+            <div class="indicador">
+                <span class="title">Gêneros explorados</span>
+                <span class="value" id="generos_porcentagem"></span>
+                 <span class="legenda">De 14 gêneros</span>
+            </div>
+
+            <div class="indicador">
+                <span class="title">Músicas exploradas</span>
+                <span class="value" id="musicas_porcentagem">5</span>
+                 <span class="legenda">De 6 músicas</span>
             </div>
         </div>
 
         <div class="graficos">
             <div class="grafico">
-                <p>Distribuição do seu interesse</p>
+                <p>Evolução das tentativas</p>
                 <div class="grafico-container">
-                    <canvas id="grafico_donut"></canvas>
+                    <canvas id="grafico_line"></canvas>
                 </div>
             </div>
-
-            <div class="grafico">
-                <p>Afinações mais exploradas</p>
+            <div class="grafico segundo">
+                <p>Percentual de acerto</p>
                 <div class="grafico-container">
-                    <canvas id="grafico_barra"></canvas>
+                    <canvas id="grafico_donut"></canvas>
                 </div>
             </div>
         </div>

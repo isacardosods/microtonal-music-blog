@@ -38,6 +38,9 @@ function avancar() {
     if (!respostaAtual) {
         cardErro.style.display = "flex";
         mensagem_erro.innerHTML = `Responda a questão atual antes de avançar!`;
+        title_info.innerHTML = 'Não seja apressado!'
+        img_icon.src = '../assets/img/erro.svg'
+        
         return;
     }
 
