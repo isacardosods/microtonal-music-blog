@@ -64,13 +64,7 @@ function cadastrarRespostas() {
     };
 
     for (let i = 0; i < 10; i++) {
-        const questao = document.querySelector(`input[name="q${i + 1}"]:checked`);
-
-        if (!questao) {
-            cardErro.style.display = "flex";
-            mensagem_erro.innerHTML = `É necessário responder todas as questões!`;
-            return;
-        }
+        let questao = document.querySelector(`input[name="q${i + 1}"]:checked`);
 
         //obs: dataset é como se fosse um objeto que armazena os atributos que vc colocou nele a partir do front
         usuario_respostas.respostas.push({

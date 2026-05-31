@@ -102,11 +102,27 @@ WHERE fk_usuario = ${id_usuario};`;
   return database.executar(instrucaoSql);
 }
 
+function ranking() {
+  var instrucaoSql = `
+SELECT
+	usuario.nome AS nome_usuario,
+	COUNT(correta) AS respostas_corretas
+FROM usuario_resposta JOIN usuario
+ON fk_usuario = id_usuario
+WHERE correta = 1 
+GROUP BY fk_usuario
+ORDER BY respostas_corretas DESC LIMIT 10;`;
+
+  console.log("Executando a instrução SQL: \n" + instrucaoSql);
+  return database.executar(instrucaoSql);
+}
+
 module.exports = {
   buscarTentativas,
   buscarCorretas,
   buscarGeneros,
   buscarMusicas,
   buscarEvolucao,
-  buscarPercentual
+  buscarPercentual,
+  ranking
 }

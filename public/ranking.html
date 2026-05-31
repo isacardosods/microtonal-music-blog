@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entretons | Ranking</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/ranking.css">
+</head>
+
+<body>
+    <div class="left-painel">
+        <div class="logo">
+            <a href="index.html"><span>Entretons</span></a>
+            <img src="./assets/img/logo-img.svg" alt="logo-img">
+        </div>
+
+        <span>MENU</span>
+        <ul>
+            <li>
+                <img src="assets/img/dashboard.svg" alt="">
+                <a href="dashboard.html">Dashboard</a>
+            </li>
+            <li>
+                <img src="assets/img/estatisticas.svg" alt="">
+                <a href="ranking.html">Ranking</a>
+            </li>
+        </ul>
+
+        <span>GERAL</span>
+        <ul>
+            <li>
+                <img src="assets/img/logout.svg" alt="">
+                <a href="index.html" onclick="limparSessao()">Logout</a>
+            </li>
+        </ul>
+    </div>
+
+    <main>
+        <div class="top-painel">
+            <div class="text-box">
+                <p id="bem_vindo"></p>
+                <span>Entre para o ranking!</span>
+            </div>
+        </div>
+
+        <div class="ranking">
+            <p>Confira o ranking de usuários com o maior número de acertos!</p>
+            <div class="ranking-content">
+            </div>
+        </div>
+
+    </main>
+</body>
+<script src="js/ranking.js"></script>
+<script src="js/sessao.js"></script>
+
+</html>

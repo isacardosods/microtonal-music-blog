@@ -27,4 +27,8 @@ router.get("/buscarPercentual/:id_usuario", function (req, res) {
     dashController.buscarPercentual(req, res);
 })
 
+router.get("/ranking", function (req, res) {
+    dashController.ranking(req, res);
+})
+
 module.exports = router;
