@@ -113,12 +113,15 @@ function cadastrarRespostas() {
 }
 
 function carregarDiv() {
+    const btn = document.getElementById('btn_dash');
+
     cardErro.style.display = "flex";
     img_icon.src = '../assets/img/ok.svg';
     title_info.innerHTML = 'Parabéns!'
     mensagem_erro.innerHTML = "Respostas enviadas com sucesso";
+    btn.textContent = 'Acessar Dashboard';
 
-    setTimeout(() => {
-        window.location = '../index.html';
-    }, 2000);
+    btn.addEventListener('click', () => {
+        window.location = '../dashboard.html';
+    })
 }

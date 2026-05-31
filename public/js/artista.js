@@ -74,6 +74,20 @@ let like_musicas = [
     }
 ]
 
+function carregarDiv() {
+    const btn = document.getElementById('btn_dash');
+
+    cardErro.style.display = "flex";
+    img_icon.src = '../assets/img/ok.svg';
+    title_info.innerHTML = 'Preferência cadastrada!'
+    mensagem_erro.innerHTML = "Você pode alterar a hora que quiser!";
+    btn.textContent = 'Acessar Dashboard';
+
+    btn.addEventListener('click', () => {
+        window.location = '../dashboard.html';
+    })
+}
+
 async function buscarLikes() {
     fetch(`/artistas/buscarLikes/${id_usuario}`, {
         method: "GET",
@@ -103,6 +117,7 @@ async function buscarLikes() {
                         dislikes[index].classList.add('ativo');
                     }
                 }
+
             });
 
         } else {
@@ -131,6 +146,7 @@ async function cadastrarLikes(index) {
 
         if (resposta.ok) {
             console.log("Curtida cadastrada com sucesso");
+            carregarDiv();
 
         } else {
             validarSessao();
@@ -145,12 +161,12 @@ async function cadastrarLikes(index) {
 buscarLikes();
 for (let i = 0; i < likes.length; i++) {
     likes[i].addEventListener('click', () => {
-        
+
         if (dislikes[i].classList.contains('ativo')) {
             dislikes[i].classList.remove('ativo');
         };
         likes[i].classList.toggle('ativo');
-        
+
         like_musicas[i].tipo_like = likes[i].classList.contains('ativo') ? 'LIKE' : 'DEFAULT';
         cadastrarLikes(i)
     })

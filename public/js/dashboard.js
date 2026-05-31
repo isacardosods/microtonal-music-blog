@@ -1,4 +1,4 @@
-const p = document.getElementById('bem_vindo').innerHTML = `Bem-vindo, ${sessionStorage.getItem('NOME_USUARIO')}`;
+const p = document.getElementById('bem_vindo').innerHTML = `Bem-vindo(a), ${sessionStorage.getItem('NOME_USUARIO')}`;
 let id_usuario = sessionStorage.getItem('ID_USUARIO');
 
 fetch(`/dashboard/buscarTentativas/${id_usuario}`, {
@@ -204,7 +204,7 @@ function plotarEvolucao(resposta, id_usuario) {
                         display: true,
                         text: 'Respostas corretas'
                     },
-                    max: 10,
+                    max: 12,
                     min: 0,
                     grid: {
                         color: 'rgba(255,255,255,0.08)'
