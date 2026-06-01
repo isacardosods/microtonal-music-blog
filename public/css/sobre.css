@@ -283,7 +283,8 @@ main {
     letter-spacing: 2px;
 }
 
-/*odd é usado para selecionar os elementos ímpares enquanto o even é para os pares!!! o transform desloca as caixas*/
+/*odd é usado para selecionar os elementos ímpares enquanto o even é para os pares!!! 
+o transform desloca as caixas*/
 .linha-tempo .card-linha:nth-child(odd) {
     border-radius: 5px 0px 5px 5px;
     float: left;
@@ -300,7 +301,8 @@ main {
     border-bottom: 5px solid #FFD700;
 }
 
-/* o before/after cria um elemento 'falso' através do css, nesse caso é utilizado para criar a linha, sem necessariamente ter escrito ela no html */
+/* o before/after cria um elemento 'falso' através do css, nesse caso é utilizado para criar a linha, 
+sem necessariamente ter escrito ela no html */
 .linha-tempo::before {
     content: "";
     position: absolute;
@@ -311,5 +313,4 @@ main {
     border-style: dashed;
     border-radius: 5px;
     color: #FFD700;
-
 }

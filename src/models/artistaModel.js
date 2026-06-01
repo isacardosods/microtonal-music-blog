@@ -16,7 +16,7 @@ function buscarLikes(id_usuario, id_musica, tipoLike) {
 
 function cadastrarLikes(id_usuario, id_musica, tipoLike) {
     console.log("ACESSEI O ARTISTA MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrarLikes():", id_usuario, id_musica, tipoLike);
-
+    //em caso de duplicidade, ou seja, se eu registro ja existe para esse user e para essa musica, ele faz um update
     var instrucaoSql = `
         INSERT INTO like_musica(fk_usuario, fk_musica, tipo_like) VALUES(?, ?, ?) ON DUPLICATE KEY UPDATE tipo_like = VALUES(tipo_like);
     `;

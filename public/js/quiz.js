@@ -16,13 +16,16 @@ function validarSessao() {
     }
 } validarSessao();
 
+
 function fecharPopup() {
     cardErro.style.display = 'none';
 }
 
+//verifica qual é a pergunta do quiz e a partir disso habilita ou nao o botao de voltar
 function verificar() {
     btn_anterior.style.display = pergunta_atual <= 0 ? 'none' : 'block';
 
+    //verificacao para ir na parte de enviar respostas
     if (pergunta_atual < perguntas.length) {
         perguntas[pergunta_atual].classList.add('ativa');
     } else {
@@ -32,6 +35,7 @@ function verificar() {
     }
 }
 
+//funcao de avançar no quiz
 function avancar() {
     const respostaAtual = document.querySelector(`input[name="q${pergunta_atual + 1}"]:checked`);
 
@@ -50,6 +54,7 @@ function avancar() {
     verificar();
 }
 
+//funcao de recuar no quiz
 function recuar() {
     perguntas[pergunta_atual].classList.remove('ativa');
     pergunta_atual--;
@@ -67,6 +72,8 @@ function cadastrarRespostas() {
         let questao = document.querySelector(`input[name="q${i + 1}"]:checked`);
 
         //obs: dataset é como se fosse um objeto que armazena os atributos que vc colocou nele a partir do front
+        //nesse caso, eu coloco os ids assim como estao cadastrados no banco de dados
+        //  não é muito prático para ser escalável mas é simples de utilizar :)
         usuario_respostas.respostas.push({
             id_pergunta: questao.dataset.pergunta,
             id_alternativa: questao.dataset.id_resposta

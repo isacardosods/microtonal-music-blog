@@ -20,6 +20,7 @@ function fecharPopup() {
     div_login_alert.style.display = 'none';
 }
 
+//funcao de voltar para img anterior
 left_arrow.addEventListener('click', () => {
     if (contador <= 0) return;
 
@@ -31,6 +32,7 @@ left_arrow.addEventListener('click', () => {
     albuns[contador].style.display = 'flex';
 })
 
+//aqui é para proxima
 right_arrow.addEventListener('click', () => {
     if (contador >= albuns.length - 1) return;
 
@@ -88,6 +90,7 @@ function carregarDiv() {
     })
 }
 
+//funcao pra verificar se os likes já existem (é legal porque quando o usuário está logado ela já carrega os últimos likes dele)
 async function buscarLikes() {
     fetch(`/artistas/buscarLikes/${id_usuario}`, {
         method: "GET",
@@ -105,6 +108,7 @@ async function buscarLikes() {
                 let response = JSON.stringify(json);
                 console.log(response);
 
+                //aqui a partir da busca ele coloca as classes dependendo do tipo do like
                 for (let i = 0; i < json.length; i++) {
                     let item = json[i];
                     let index = item.fk_musica - 1;
@@ -159,6 +163,7 @@ async function cadastrarLikes(index) {
 }
 
 buscarLikes();
+
 for (let i = 0; i < likes.length; i++) {
     likes[i].addEventListener('click', () => {
 

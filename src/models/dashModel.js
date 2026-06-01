@@ -71,6 +71,11 @@ WHERE tipo_like != 'DEFAULT' AND fk_usuario = ${id_usuario};`;
   return database.executar(instrucaoSql);
 }
 
+//para essa query, foi necessário consultar essa documentação: https://medium.com/lets-data/desvendando-o-poder-das-window-functions-em-sql-para-estudantes-de-ci%C3%AAncia-de-dados-71b65ec9962d
+//a subquery usa a função ROW_NUMBER() que busca todas as respostas do usuário 
+// e numera cada linha em ordem! (evitando de pegar por exemplo tentativas 1, 2 e 5 dependendo da ordem dos registros)
+//depois disso a função ceil arredonda para cima e depois divide por 10, passando a considerar 10 registros como 1 tentativa
+//gambiarrinha :)
 function buscarEvolucao(id_usuario) {
   var instrucaoSql = `
 SELECT

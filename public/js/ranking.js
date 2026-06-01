@@ -33,6 +33,7 @@ function carregarRanking(json) {
     }
 }
 
+//busca ranking e depois executa a função carregarRanking() para criá-lo dinamicamente
 fetch(`/dashboard/ranking`, {
     method: "GET",
     headers: {

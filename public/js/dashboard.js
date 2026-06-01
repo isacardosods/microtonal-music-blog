@@ -1,6 +1,8 @@
 const p = document.getElementById('bem_vindo').innerHTML = `Bem-vindo(a), ${sessionStorage.getItem('NOME_USUARIO')}`;
 let id_usuario = sessionStorage.getItem('ID_USUARIO');
 
+//aqui sao varios fetchs tipo get para pegar as infos para os indicadores e gráficos
+
 fetch(`/dashboard/buscarTentativas/${id_usuario}`, {
     method: "GET",
     headers: {

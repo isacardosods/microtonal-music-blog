@@ -7,6 +7,7 @@ function cadastrarRespostas(id_usuario, id_resposta) {
     for (let i = 0; i < id_resposta.length; i++) {
         let alternativa_acessada = id_resposta[i];
 
+        //a subquery vai até a tabela alternativa e busca se aquela alternativa é correta ou não
         var instrucaoSql = `
         INSERT INTO usuario_resposta (fk_usuario, fk_alternativa, correta, dt_resposta) VALUES 
         ('${id_usuario}', 
@@ -23,6 +24,7 @@ function cadastrarRespostas(id_usuario, id_resposta) {
     }
 
     //é utilizado para receber todos os inserts sem interromper a execução
+    //todas as queries rodam ao mesmo tempo, em vez de uma por vez
     return Promise.all(inserts);
 }
 module.exports = {
