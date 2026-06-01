@@ -75,20 +75,26 @@ main {
 .artistas {
     background-color: #FFD700;
     border: none;
+    transition: 0.2s;
 }
 
 .artistas:hover {
     background-color: #a28d18;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .cadastro {
     border: 1px solid gray;
     background-color: transparent;
     color: white;
+    transition: 0.2s;
 }
 
 .cadastro:hover {
     background-color: hsla(0, 0%, 100%, 0.181);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .sobre {
@@ -131,6 +137,12 @@ main {
     border: 1px solid gray;
     border-radius: 10px;
     border-bottom: 5px solid #FFD700;
+    transition: 0.2s;
+}
+
+.sobre .card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .sobre .card span {
@@ -147,10 +159,13 @@ main {
     margin-top: 5vh;
     background-color: #FFD700;
     border: none;
+    transition: 0.2s;
 }
 
 .sobre .more:hover {
     background-color: #a28d18;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .artistas-container {
@@ -194,6 +209,12 @@ main {
     width: 30vw;
     border: 2px solid #FFD700;
     border-radius: 10px;
+    transition: 0.2s;
+}
+
+.artistas-cards .artistas-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
 
 .img {
@@ -237,11 +258,14 @@ main {
     font-size: 1.1em;
 }
 
-.more-artists{
+.more-artists {
     background-color: #FFD700;
     border: none;
+    transition: 0.2s;
 }
 
-.more-artists:hover{
+.more-artists:hover {
     background-color: #a28d18;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
 }
